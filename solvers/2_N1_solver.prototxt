@@ -1,0 +1,14 @@
+net: "2_N1_train.prototxt"
+test_iter: 7
+test_interval: 124
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "inv"
+base_lr: 0.01
+gamma: 0.0001
+power: 0.75
+max_iter: 620000
+display: 200
+snapshot: 6200
+snapshot_prefix: "../model_values/2_N1/2_N1"
+solver_mode: GPU

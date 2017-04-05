@@ -1,0 +1,16 @@
+使用方法：
+1）进入训练程序，执行make
+2）回到主目录执行generate_data.sh生成训练集合
+3）执行run_training.sh进行训练
+4）执行 训练程序/move_training_results -i model_values
+5）在主目录执行make
+6）执行landmarker查看定位结果
+
+文件夹结构：
+训练程序：生成训练集的程序代码
+data：训练数据
+deploy_model：关键点定位神经网络部署模型
+train_model：关键点定位神经网络训练模型
+model_values：神经网参数文件
+solvers：训练参数
+src：关键点定位程序代码

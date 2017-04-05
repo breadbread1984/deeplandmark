@@ -1,0 +1,14 @@
+net: "1_F_train.prototxt"
+test_iter: 4
+test_interval: 77
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "inv"
+base_lr: 0.01
+gamma: 0.0001
+power: 0.75
+max_iter: 385000
+display: 200
+snapshot: 3850
+snapshot_prefix: "../model_values/1_F/1_F"
+solver_mode: GPU
