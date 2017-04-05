@@ -3,7 +3,7 @@
 
 This code is an implement of the algorithm introduced in paper [Deep Convolutional Network Cascade for Facial Point Detection](http://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Sun_Deep_Convolutional_Network_2013_CVPR_paper.pdf) . The network models are borrowed from project [deep-landmark](https://github.com/luoyetx/deep-landmark) .
 
-###Project Structure
+### Project Structure
 
 训练程序：code for generating lmdb
 data：lmdb files
@@ -13,17 +13,21 @@ solvers：training parameters
 model_values：trained model files
 src：facial landmarkers
 
-###Building
+### Building
 
+```Shell
 make -C 训练程序 -j9 && make -j9
+```
 
-###Training
+### Training
 
 You can skip the training if you just want to detect facial landmarks with this project because all pretrained caffemodel files are given in model_values directory
 1. download [Large-scale CelebFaces Attributes](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset
 uncompress the dataset, and prepare two list files which are compose of lines in the following format
 
+```Shell
 <absolute path to image>  <left>  <right>  <top>  <bottom coordinate of the facial bounding box>  <x of 1st landmark>  <y of 1st landmark>  ...   <x of 5th landmark>  <y of 5th landmark>
+```
 
 one list file for training images(trainlist.txt), and another for testing ones(testlist.txt).
 
@@ -52,7 +56,7 @@ in 训练程序 directory
 ./move_training_results -i ../model_values
 ```
 
-###Run
+### Run
 
 execute landmarker on a computer with a webcam. 
 
