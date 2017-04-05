@@ -6,11 +6,17 @@ This code is an implement of the algorithm introduced in paper [Deep Convolution
 ### Project Structure
 
 训练程序：code for generating lmdb
+
 data：lmdb files
+
 deploy_model：deploy models for facial landmarker
+
 train_model：training models for facial landmarker
+
 solvers：training parameters
+
 model_values：trained model files
+
 src：facial landmarkers
 
 ### Building
@@ -34,6 +40,7 @@ one list file for training images(trainlist.txt), and another for testing ones(t
 2. generate LMDB files and solver files
 
 in project root directory
+
 ```Shell
 ./generate_data.sh
 ```
@@ -42,8 +49,11 @@ edit solver files as needed
 3. train models
 
 in train_model directory
+
 train every model with caffe
+
 for example:
+
 ```Shell
 caffe train -solver ../solvers/1_EN_solver.prototxt -gpu all
 ```
@@ -52,6 +62,7 @@ the trained model files are located in corresponding directories in model_values
 4. move trained model files to model_values directory
 
 in 训练程序 directory
+
 ```Shell
 ./move_training_results -i ../model_values
 ```
