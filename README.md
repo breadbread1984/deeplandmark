@@ -22,21 +22,35 @@ make -C 训练程序 -j9 && make -j9
 You can skip the training if you just want to detect facial landmarks with this project because all pretrained caffemodel files are given in model_values directory
 1. download [Large-scale CelebFaces Attributes](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset
 uncompress the dataset, and prepare two list files which are compose of lines in the following format
+
 <absolute path to image>  <left>  <right>  <top>  <bottom coordinate of the facial bounding box>  <x of 1st landmark>  <y of 1st landmark>  ...   <x of 5th landmark>  <y of 5th landmark>
+
 one list file for training images(trainlist.txt), and another for testing ones(testlist.txt).
+
 2. generate LMDB files and solver files
+
 in project root directory
+```Shell
 ./generate_data.sh
+```
 edit solver files as needed
+
 3. train models
+
 in train_model directory
 train every model with caffe
 for example:
+```Shell
 caffe train -solver ../solvers/1_EN_solver.prototxt -gpu all
+```
 the trained model files are located in corresponding directories in model_values directory
+
 4. move trained model files to model_values directory
+
 in 训练程序 directory
+```Shell
 ./move_training_results -i ../model_values
+```
 
 ###Run
 
